@@ -1,0 +1,49 @@
+$primary-color: #E1251B;
+$secondary-color: #231915;
+$success-color: #28a745;
+$info-color: #17a2b8;
+$warning-color: #ffc107;
+$danger-color: #dc3545;
+
+$body-font-family: 'Arial', sans-serif;
+$heading-font-family: 'Roboto', sans-serif;
+
+$base-spacing: 1rem;
+$small-spacing: 0.5rem;
+$large-spacing: 2rem;
+
+$default-border-radius: 4px;
+$button-border-radius: 6px;
+
+$sm-screen: 576px;
+$md-screen: 768px;
+$lg-screen: 992px;
+$xl-screen: 1200px;
+
+$z-index-navbar: 1000;
+$z-index-modal: 1100;
+$z-index-tooltip: 1200;
+
+$animation-duration: 0.3s;
+$animation-easing: ease-out;
+
+
+$container-max-width: 1200px;
+
+:export {
+    primary-color: $primary-color;
+    secondary-color: $secondary-color;
+    success-color: $success-color;
+    info-color: $info-color;
+    warning-color: $warning-color;
+    danger-color: $danger-color;
+
+    body-font-family: $body-font-family;
+    heading-font-family: $heading-font-family;
+
+    base-spacing: $base-spacing;
+    small-spacing: $small-spacing;
+    large-spacing: $large-spacing;
+
+    default-border-radius: $default-b
+}
