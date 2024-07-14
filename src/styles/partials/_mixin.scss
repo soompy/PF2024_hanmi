@@ -1,0 +1,70 @@
+@import '../variables.scss';
+
+$theme-colors: (
+    'primary': $primary-color,
+    'secondary': $secondary-color,
+    'dark': (
+        'bg': $dark-mode-bg,
+        'text': $dark-mode-text
+    ),
+    'light': (
+        'bg': $light-mode-bg,
+        'text': $light-mode-text
+    )
+);
+
+$dark-mode: (
+    'bg': $dark-mode-bg,
+    'text': $dark-mode-text
+);
+
+$light-mode: (
+    'bg': $light-mode-bg,
+    'text': $light-mode-text
+);
+
+.dark-mode {
+    @each $color, $value in $dark-mode {
+        .bg-#{$color} {
+            background-color: $value;
+        }
+
+        .text-#{$color} {
+            color: $value;
+        }
+    }
+}
+
+.light-mode {
+    @each $color, $value in $light-mode {
+        .bg-#{$color} {
+            background-color: $value;
+        }
+
+        .text-#{$color} {
+            color: $value;
+        }
+    }
+}
+@mixin dark-mode {
+    body {
+        background-color: map-get(map-get($theme-colors, 'dark'), 'bg');
+        color: map-get(map-get($theme-colors, 'dark'), 'text');
+    } 
+}
+
+@mixin light-mode {
+    body {
+        background-color: map-get(map-get($theme-colors, 'light'), 'bg');    
+        color: map-get(map-get($theme-colors, 'light'), 'text');
+    }    
+}
+
+
+[data-theme="dark"] {
+    @include dark-mode;
+}
+
+[data-theme="light"] {
+    @include light-mode;
+}

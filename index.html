@@ -10,17 +10,31 @@
   <meta property="og:image" content="">
   <meta property="og:description" content="이수민 웹퍼블리싱 한미약품 포트폴리오">
   <title>한미약품 리뉴얼 포트폴리오</title>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
   <div id="wrap">
-    <%- header %>
+    <header id="header">
+      <%- header %>
+    </header>
+
+    <div id="app" class="container">
+      <h1 class="text-center my-5">Hello, Bootstrap with Vite!</h1>
+      <button class="btn btn-primary">Click me</button>
+    </div>
+
+
+    <label class="switch">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="slider round"></span>
+      테마바꿔
+    </label>
+    
+
 
   </div>
 
-
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="module"></script>
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 
 </html>
