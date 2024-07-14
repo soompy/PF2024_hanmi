@@ -1,9 +1,28 @@
-$primary-color: #E1251B;
-$secondary-color: #231915;
-$success-color: #28a745;
-$info-color: #17a2b8;
-$warning-color: #ffc107;
-$danger-color: #dc3545;
+:root {
+    --c-black: #1C1C1C;
+    --c-white: #fff;
+    --c-gray01: #555;
+    --c-gray02: #999;
+    --c-gray03: #ddd;
+    --c-gray04: #e4e4e4;
+    --c-gray05: #f5f5f5;
+    --c-gray06: #f8f7fa;
+    --c-primary: #E1251B;
+    --c-secondary: #231915;
+}
+
+html[data-theme=dark] {
+    --c-black: #cfcfcf;
+    --c-white: #141414;
+    --c-gray01: #6f6f6f;
+    --c-gray02: #cccccc;
+    --c-gray03: #919191;
+    --c-gray04: #7e7e7e;
+    --c-gray05: gainsboro;
+    --c-gray06: #413656;
+    --c-accent01: #f57b74;
+    --c-accent02: #4c4c4c;
+}
 
 $body-font-family: 'Arial', sans-serif;
 $heading-font-family: 'Roboto', sans-serif;
@@ -18,7 +37,7 @@ $button-border-radius: 6px;
 $sm-screen: 576px;
 $md-screen: 768px;
 $lg-screen: 992px;
-$xl-screen: 1200px;
+$xl-screen: 1400px;
 
 $z-index-navbar: 1000;
 $z-index-modal: 1100;
@@ -28,11 +47,3 @@ $animation-duration: 0.3s;
 $animation-easing: ease-out;
 
 $container-max-width: 1200px;
-
-
-// theme color
-$dark-mode-bg: #343a40;
-$dark-mode-text: #ffffff;
-
-$light-mode-bg: #ffffff;
-$light-mode-text: #212529;

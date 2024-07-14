@@ -10,6 +10,11 @@ const headerContent = fs.readFileSync(
   "utf-8"
 );
 
+const footerContent = fs.readFileSync(
+  path.resolve(__dirname, "src/components/layouts/footer.html"),
+  "utf-8"
+);
+
 export default defineConfig({
   base: "./",
   resolve: {
@@ -27,6 +32,7 @@ export default defineConfig({
       inject: {
         data: {
           header: headerContent,
+          footer: footerContent,
         },
       },
     }),

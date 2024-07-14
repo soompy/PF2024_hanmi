@@ -1,6 +1,35 @@
-.header-wrap {
-    .inner {}
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 
+#wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+#content,
+.header-wrap,
+.footer-wrap {
+    position: relative;
+    width: 100%;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        width: $xl-screen;
+        margin: auto;
+        padding: $small-spacing;
+    }
+}
+
+.header-wrap {
     .logo {
         display: block;
         width: 100px;
@@ -10,5 +39,23 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
+
+        a {
+            display: block;
+            height: 100%;
+        }
     }
+
+    .nav {
+        margin: auto;
+
+        .gnb {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+#footer {
+    margin-top: auto;
 }
