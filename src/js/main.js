@@ -4,6 +4,8 @@ import "bootstrap";
 import Navigo from 'navigo';
 import "../styles/main.scss";
 
+import "./common"
+
 // theme
 const darkModeToggle = document.getElementById("darkModeToggle");
 
