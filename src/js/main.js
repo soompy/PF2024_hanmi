@@ -1,10 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
-import Navigo from 'navigo';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
+import Navigo from "navigo";
 import "../styles/main.scss";
 
-import "./common"
+import "./common";
 
 // theme
 const darkModeToggle = document.getElementById("darkModeToggle");
@@ -18,25 +22,27 @@ darkModeToggle.addEventListener("change", () => {
 });
 
 // navigo
-const router = new Navigo('/');
+const router = new Navigo("/");
 
-router.on({
-  '/': function () {
-    renderPage("main.html");
-  },
-  '/about': function () {
-    renderPage("about.html");
-  },
-  '/science': function () {
-    renderPage("science.html");
-  },
-  '/business': function () {
-    renderPage("business.html");
-  },
-  '/contact': function () {
-    renderPage("contact.html");
-  }
-}).resolve();
+router
+  .on({
+    "/": function () {
+      renderPage("main.html");
+    },
+    "/about": function () {
+      renderPage("about.html");
+    },
+    "/science": function () {
+      renderPage("science.html");
+    },
+    "/business": function () {
+      renderPage("business.html");
+    },
+    "/contact": function () {
+      renderPage("contact.html");
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
   fetch(`${page}`)
