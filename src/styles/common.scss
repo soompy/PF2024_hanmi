@@ -1,0 +1,28 @@
+.btn {
+    padding: $base-spacing $large-spacing;
+    font-size: $font-size-l;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: $button-border-radius;
+
+    &._primary {
+        background: var(--c-primary);
+        color: var(--c-white);
+    }
+}
+
+.title {
+    &._container {
+        position: relative;
+    }
+
+    &._main {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    &._sub {
+        font-size: 30px;
+    }
+}

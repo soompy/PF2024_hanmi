@@ -1,14 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init();
 
 import Navigo from "navigo";
 import "../styles/main.scss";
 
 import "./common";
+import "./page";
 
 // theme
 const darkModeToggle = document.getElementById("darkModeToggle");
