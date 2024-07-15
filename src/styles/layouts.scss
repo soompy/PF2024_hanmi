@@ -75,14 +75,14 @@ body {
                 }
             }
 
-            &.sub {
+            &.sub-menu {
                 display: none;
                 position: fixed;
                 left: 0;
                 top: 80px;
                 z-index: 1;
                 width: 100vw;
-                height: 100%;
+                height: 50%;
                 background: var(--c-gray04);
 
                 li {
@@ -104,8 +104,7 @@ body {
 
                             a {
                                 font-weight: normal;
-                                margin-bottom: 0;
-                                color: var(--c-gray01);
+                                margin-bottom: 0;                                
                             }
                         }
                     }
