@@ -9,6 +9,8 @@
     --c-gray06: #f8f7fa;
     --c-primary: #E1251B;
     --c-secondary: #231915;
+    --svg-width: 100%;
+    --svg-height: auto;
 }
 
 html[data-theme=dark] {
@@ -44,7 +46,7 @@ $font-size-xxl: 36px;
 $sm-screen: 576px;
 $md-screen: 768px;
 $lg-screen: 992px;
-$xl-screen: 1400px;
+$xl-screen: 1200px;
 
 $z-index-navbar: 1000;
 $z-index-modal: 1100;

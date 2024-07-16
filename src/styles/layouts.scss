@@ -37,6 +37,15 @@ body {
 .area-common {
     width: 100%;
     padding: 80px 0;
+    background: var(--c-white);
+}
+
+#header {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: var(--c-white);
 }
 
 .header-wrap {
@@ -87,14 +96,17 @@ body {
             }
 
             &.sub-menu {
-                display: none;
+                opacity: 0;
+                visibility: hidden;
                 position: fixed;
                 left: 0;
                 top: 80px;
                 z-index: 1;
                 width: 100vw;
-                height: 50%;
-                background: var(--c-gray04);
+                height: 0;
+                background: var(--c-white);
+                transition: height 0.5s linear;
+                border-top: 1px solid var(--c-gray03);
 
                 li {
                     flex: 1;
@@ -122,8 +134,11 @@ body {
                 }
 
                 &.on {
+                    opacity: 1;
+                    visibility: visible;
                     display: flex;
                     align-items: center;
+                    height: 60%;
 
                     li {
                         ul {

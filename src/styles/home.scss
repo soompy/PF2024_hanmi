@@ -1,14 +1,39 @@
-.visual {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50vh;
-    font-size: 40px;
-    font-weight: bold;
-    color: var(--c-primary);
+.main_1 {
+    .visual {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 50vh;
+        font-size: 40px;
+        font-weight: bold;
+
+        .svg-circle {
+            animation: rotateAnimation 8s linear infinite;
+            animation-fill-mode: backwards;
+            width: 40%;
+        }
+    }
+
+    &.fixed {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
 }
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 .rolling-banner-container {
     overflow: hidden;
@@ -53,9 +78,76 @@
     }
 }
 
-.make-container {
+.main_2 {
     position: relative;
 
+    .main_2_top {
+        display: flex;
+        align-items: center;
+
+        .swiper-btn-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+
+            .swiper-btn {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    .main2Swiper {
+        .swiper-wrapper {
+            display: flex;
+            align-content: center;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+            width: 710px;
+            margin-right: $large-spacing;
+            flex-shrink: 0;
+
+            .imgVideo,
+            .carousel-img {
+                width: 100%;
+                height: 400px;
+            }
+
+            .imgVideo video,
+            .carousel-img img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+            &:hover {
+
+                .imgVideo,
+                .carousel-img {
+                    // transition: all 0.5s linear;
+                    // transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .text-box {
+        h4 {
+            font-size: $font-size-xxl;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: $font-size-l;
+        }
+    }
+}
+
+
+.make-container {
+    position: relative;
 
     img {
         object-fit: contain;
