@@ -1,0 +1,76 @@
+.about {
+    width: 100%;
+    min-height: 100vh;
+
+    &._2 {
+        background: url("../assets/images/img_company_introduce.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        .cont {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            // &.first {}
+            &.second {
+                .grid-box {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: 30px;
+                    word-break: keep-all;
+
+                    strong {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    &._3 {
+        .cont {
+            .cont-item {
+                display: none;
+                align-items: center;
+                justify-content: center;
+
+                .circle {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100px;
+                    height: 100px;
+                    font-size: $font-size-xl;
+                    background: var(--c-black);
+                    color: var(--c-white);
+                    border-radius: $default-border-radius;
+                }
+
+                .number {
+                    font-size: $font-size-l;
+                    margin: 0 $xlarge-spacing;
+
+                    strong {
+                        display: inline-block;
+                        font-size: 100px;
+                        font-weight: 900;
+                        color: var(--c-primary);
+                    }
+                }
+
+                .text-box {
+                    strong {
+                        font-size: $font-size-l;
+                    }
+                }
+
+                &.on {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
