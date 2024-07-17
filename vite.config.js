@@ -47,4 +47,7 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "./",
   },
+  optimizeDeps: {
+    include: ["swiper"],
+  },
 });
