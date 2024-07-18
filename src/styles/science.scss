@@ -1,0 +1,97 @@
+.science {
+    &._2 {
+        position: relative;
+        height: 100vh;
+
+        .bg {
+            display: block;
+            width: 100%;
+            height: 70vh;
+            background: url("../assets/images/img_hanmirnd_overview.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .title {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: inherit;
+            transform: translate(-50%, -50%);
+
+            strong {
+                color: var(--c-primary);
+            }
+        }
+
+        &.bgOff {
+            .bg {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40%;
+                height: 30vh;
+                background-position: right center;
+            }
+        }
+    }
+
+    &._3 {
+        position: relative;
+
+        .point {
+            margin-top: $xlarge-spacing;
+            li {
+                padding: $large-spacing;
+                border-radius: $default-border-radius;
+                color: var(--c-white);
+
+                &:nth-child(even) {
+                    background: var(--c-primary);
+                }
+
+                &:nth-child(odd) {
+                    background: var(--c-secondary);
+                }
+            }
+        }
+
+        .grid-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: $large-spacing;
+
+            li {
+                h4 {
+                    margin: $large-spacing 0;
+                }
+                i {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: $small-spacing;
+                }
+
+                span {
+                    display: block;
+
+                    img {
+                        object-fit: contain;
+                    }
+                }
+
+                .info-list {
+                    li {
+                        display: flex;
+                        align-items: center;
+                        margin: $middle-spacing 0;
+                    }
+                }
+            }
+        }
+    }
+}
