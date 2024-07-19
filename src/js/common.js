@@ -1,5 +1,5 @@
-// gnb
 document.addEventListener("DOMContentLoaded", function () {
+  // gnb
   var menuItems = document.querySelectorAll(".gnb > li");
 
   menuItems.forEach(function (menuItem) {
@@ -34,8 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-});
 
+  // footer
+  const slidedownBtn = document.querySelector(".slidedownBtn");
+  const slidedownCont = document.querySelector(".slidedownCont");
+  slidedownBtn.addEventListener("click", () => {
+    slidedownBtn.classList.toggle("on");
+    slidedownCont.classList.toggle("on");
+  });
+});
 
 // icon
 function createIcon(iconName, size = 32, color = "currentColor") {

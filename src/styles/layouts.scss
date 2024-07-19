@@ -223,21 +223,26 @@ body {
                 visibility: hidden;
                 position: relative;
                 height: 0;
-                transition: all 0.5s linear;
 
                 .familyList {
                     position: absolute;
                     left: 0;
-                    bottom: 52px;
+                    bottom: 102px;
                     width: 100%;
                     background: var(--c-gray06);
                     border: 1px solid var(--c-gray01);
 
                     li {
-                        padding: $base-spacing;
+                        cursor: pointer;
 
                         a {
+                            padding: $base-spacing;
                             color: var(--c-gray0);
+                        }
+
+                        &:hover {
+                            background: var(--c-primary);
+                            color: var(--c-white);
                         }
                     }
                 }
