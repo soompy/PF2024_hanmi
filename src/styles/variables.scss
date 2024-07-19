@@ -61,3 +61,35 @@ $animation-duration: 0.3s;
 $animation-easing: ease-out;
 
 $container-max-width: 1200px;
+
+
+
+
+
+
+@media screen and (max-width: $xl-screen) {    
+    $font-size-m: 15px;
+    $font-size-l: 17px;
+    $font-size-xl: 22px;
+    $font-size-xxl: 32px;
+}
+
+@media screen and (max-width: $lg-screen) {
+    $font-size-m: 14px;
+    $font-size-l: 16px;
+    $font-size-xl: 20px;
+    $font-size-xxl: 30px;
+}
+
+@media screen and (max-width: $md-screen) {    
+    $font-size-l: 14px;
+    $font-size-xl: 18px;
+    $font-size-xxl: 28px;
+}
+
+@media screen and (max-width: $sm-screen) {
+    $font-size-s: 12px;
+    $font-size-m: 13px;    
+    $font-size-xl: 16px;
+    $font-size-xxl: 24px;
+}

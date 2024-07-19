@@ -1,6 +1,25 @@
 .about {
     width: 100%;
-    min-height: 100vh;
+
+    &.tab {
+        position: sticky;
+        top: 80px;
+        z-index: 1;
+        padding: $large-spacing 0;
+        background: var(--c-white);
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;     
+            gap: 40px;       
+
+            li {
+                font-size: $font-size-xxl;
+                font-weight: bold;
+            }
+        }
+    }
 
     &._2 {
         background: url("../assets/images/img_company_introduce.jpg");
