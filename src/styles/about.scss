@@ -11,85 +11,147 @@
         ul {
             display: flex;
             align-items: center;
-            justify-content: center;     
-            gap: 40px;       
+            justify-content: center;
+            gap: 40px;
 
             li {
+                position: relative;
                 font-size: $font-size-xxl;
                 font-weight: bold;
-            }
-        }
-    }
+                cursor: pointer;
 
-    &._2 {
-        background: url("../assets/images/img_company_introduce.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-
-        .cont {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-
-            // &.first {}
-            &.second {
-                .grid-box {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    grid-template-rows: repeat(2, 1fr);
-                    gap: 30px;
-                    word-break: keep-all;
-
-                    strong {
-                        font-weight: bold;
-                    }
-                }
-            }
-        }
-    }
-
-    &._3 {
-        .cont {
-            .cont-item {
-                display: none;
-                align-items: center;
-                justify-content: center;
-
-                .circle {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 100px;
-                    height: 100px;
-                    font-size: $font-size-xl;
-                    background: var(--c-black);
-                    color: var(--c-white);
-                    border-radius: $default-border-radius;
+                &:before,
+                &:after {
+                    position: absolute;
+                    display: none;
+                    clear: both;
+                    content: '';
                 }
 
-                .number {
-                    font-size: $font-size-l;
-                    margin: 0 $xlarge-spacing;
-
-                    strong {
-                        display: inline-block;
-                        font-size: 100px;
-                        font-weight: 900;
-                        color: var(--c-primary);
-                    }
+                &:before {
+                    left: 0;
+                    bottom: -8px;
+                    width: 100%;
+                    height: 2px;
+                    background: var(--c-gray03);
                 }
 
-                .text-box {
-                    strong {
-                        font-size: $font-size-l;
-                    }
+                &:after {
+                    right: -8px;
+                    top: -8px;
+                    width: $small-spacing;
+                    height: $small-spacing;
+                    background: var(--c-primary);
+                    border-radius: 50%;
                 }
 
                 &.on {
-                    display: flex;
+                    font-weight: 900;
+
+                    &:before,
+                    &:after {
+                        display: block;
+                    }
                 }
             }
         }
+    }
+}
+
+.tab-contents {
+    .about-cont {
+        display: none;
+        transition: all 0.7s linear;
+        &.cont-1 {
+            .about {
+                &._2 {
+                    background: url("../assets/images/img_company_introduce.jpg");
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: cover;
+
+                    .cont {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+
+                        // &.first {}
+                        &.second {
+                            .grid-box {
+                                display: grid;
+                                grid-template-columns: repeat(4, 1fr);
+                                grid-template-rows: repeat(2, 1fr);
+                                gap: 30px;
+                                word-break: keep-all;
+
+                                strong {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &._3 {
+                    .cont {
+                        .cont-item {
+                            display: none;
+                            align-items: center;
+                            justify-content: center;
+
+                            .circle {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100px;
+                                height: 100px;
+                                font-size: $font-size-xl;
+                                background: var(--c-black);
+                                color: var(--c-white);
+                                border-radius: $default-border-radius;
+                            }
+
+                            .number {
+                                font-size: $font-size-l;
+                                margin: 0 $xlarge-spacing;
+
+                                strong {
+                                    display: inline-block;
+                                    font-size: 100px;
+                                    font-weight: 900;
+                                    color: var(--c-primary);
+                                }
+                            }
+
+                            .text-box {
+                                strong {
+                                    font-size: $font-size-l;
+                                }
+                            }
+
+                            &.on {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.cont-2 {}
+
+        &.cont-3 {}
+
+        &.cont-4 {}
+
+        &.on {
+            display: block;
+        }
+    }
+}
+
+.text {
+    &.on {
+        font-size: $font-size-xxl;
     }
 }

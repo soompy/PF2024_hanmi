@@ -1,4 +1,49 @@
+import Navigo from "navigo";
+
 document.addEventListener("DOMContentLoaded", function () {
+  // theme
+  const darkModeToggle = document.getElementById("darkModeToggle");
+
+  darkModeToggle.addEventListener("change", () => {
+    if (darkModeToggle.checked) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  });
+
+  // navigo
+  const router = new Navigo("/");
+
+  router
+    .on({
+      "/": function () {
+        renderPage("main.html");
+      },
+      "/about": function () {
+        renderPage("about.html");
+      },
+      "/science": function () {
+        renderPage("science.html");
+      },
+      "/business": function () {
+        renderPage("business.html");
+      },
+      "/contact": function () {
+        renderPage("contact.html");
+      },
+    })
+    .resolve();
+
+  function renderPage(page) {
+    fetch(`${page}`)
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById("content").innerHTML = html;
+      })
+      .catch((error) => console.error("Error fetching page:", error));
+  }
+
   // gnb
   var menuItems = document.querySelectorAll(".gnb > li");
 
@@ -43,18 +88,3 @@ document.addEventListener("DOMContentLoaded", function () {
     slidedownCont.classList.toggle("on");
   });
 });
-
-// icon
-function createIcon(iconName, size = 32, color = "currentColor") {
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("class", "bi");
-  svg.setAttribute("width", size);
-  svg.setAttribute("height", size);
-  svg.setAttribute("fill", color);
-
-  const useTag = document.createElementNS("http://www.w3.org/2000/svg", "use");
-  useTag.setAttribute("xlink:href", `[경로]/bootstrap-icons.svg#${iconName}`);
-
-  svg.appendChild(useTag);
-  return svg;
-}
