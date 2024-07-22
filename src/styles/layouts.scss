@@ -52,6 +52,7 @@ body {
     z-index: 10;
     width: 100%;
     background: var(--c-white);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .header-wrap {
@@ -112,7 +113,7 @@ body {
                 height: 0;
                 background: var(--c-white);
                 border-top: 1px solid var(--c-gray01);
-                box-shadow: 5px 5px 6px 0px rgba(155, 156, 151, 0.2);
+                box-shadow: 5px 5px 6px 0px rgba(155, 156, 151, 0.2);                
 
                 li {
                     flex: 1;

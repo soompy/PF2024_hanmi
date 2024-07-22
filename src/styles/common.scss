@@ -9,6 +9,17 @@
         background: var(--c-primary);
         color: var(--c-white);
     }
+
+    &._black {
+        background: var(--c-black);
+        color: var(--c-white);
+    }
+
+    &._white {
+        background: var(--c-white);
+        border: 2px solid var(--c-black);
+        color: var(--c-black);
+    }
 }
 
 .title {
@@ -25,4 +36,8 @@
     &._sub {
         font-size: 30px;
     }
+}
+
+.c-primary {
+    color: var(--c-primary);
 }
