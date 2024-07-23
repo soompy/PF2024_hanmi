@@ -202,6 +202,7 @@
 }
 
 .main_5 {
+    position: relative;
     padding-bottom: 0;
     .title {
         text-align: right;
@@ -228,6 +229,21 @@
 
         .hand-img {
             width: 70%;
+        }
+    }
+
+    .leaves-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        .leaf {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background: url("../assets/images/leaf.png") center center no-repeat;
+            background-size: cover;
         }
     }
 }
