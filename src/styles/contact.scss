@@ -2,31 +2,24 @@
     &._1 {
         position: relative;
 
-        .title {
+        .tabs-container {
             position: sticky;
             left: 0;
             top: 80px;
             z-index: 5;
             background: var(--c-white);
-        }
-
-        .tabs-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: relative;
             background: var(--c-white);
 
             .tab-item {
+                position: relative;
                 display: flex;
                 flex-direction: row;
                 width: 100%;
+                max-width: 1200px;
                 border-bottom: 1px solid var(--c-gray02);
-
-                &--top {
-                    position: fixed;
-                    top: 0;
-                }
 
                 .item {
                     display: flex;
@@ -64,6 +57,7 @@
                 justify-content: center;
                 position: relative;
                 padding: $large-spacing 0;
+                border-bottom: 1px solid var(--c-black);
 
                 .contact-desc {
                     font-size: $font-size-m;
@@ -190,7 +184,8 @@
         align-items: center;
         border-radius: $default-border-radius;
 
-        input[type=text], input[type=file] {
+        input[type=text],
+        input[type=file] {
             width: calc(100% - $base-spacing);
             padding: $base-spacing;
             margin-right: $large-spacing;
@@ -198,10 +193,11 @@
             background: var(--c-white);
             border: 2px solid var(--c-gray03);
             outline: none;
-            
-            & + input[type=text] {
+
+            &+input[type=text] {
                 margin-right: 0;
             }
+
             &:focus {
                 border: 2px solid var(--c-gray02);
             }
@@ -216,8 +212,14 @@
             &:checked {
                 background: var(--c-primary);
             }
-        }   
-        
+        }
+
+        input[type=file] {
+            &::file-selector-button {
+                display: none;
+            }
+        }
+
         textarea {
             width: calc(100% - $base-spacing);
             padding: $base-spacing;
@@ -237,9 +239,10 @@
 
     .code-box {
         height: 65px;
-        border: 2px solid var(--c-gray03);    
-        margin-right: $large-spacing;    
-        .code {            
+        border: 2px solid var(--c-gray03);
+        margin-right: $large-spacing;
+
+        .code {
             img {
                 object-fit: cover;
             }
@@ -248,6 +251,7 @@
         .code-refresh {
             width: 65px;
             height: 65px;
+
             .icon {
                 width: 30px;
                 height: 30px;

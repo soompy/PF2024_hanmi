@@ -10,13 +10,12 @@ import {
   ScrollTrigger,
   Draggable,
   Flip,
-  MotionPathPlugin,
-  TweenLite,
+  MotionPathPlugin,  
 } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin, TweenLite);
+gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 
 import "../styles/main.scss";
 
-import "./common";
-import "./about";
-import "./contact";
+import "@script/common";
+import "@script/about";
+import "@script/contact.js"

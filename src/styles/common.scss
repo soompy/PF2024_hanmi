@@ -12,13 +12,18 @@
 
     &._black {
         background: var(--c-black);
-        color: var(--c-white);
+        color: var(--c-white);   
     }
 
     &._white {
         background: var(--c-white);
         border: 2px solid var(--c-black);
         color: var(--c-black);
+    }
+
+    &:hover {
+        opacity: 0.7;
+        transition: all 0.3s linear;
     }
 }
 
