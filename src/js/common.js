@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // navigo
   const router = new Navigo("/");
 
+  const pageScripts = {
+    "/": "./src/js/home.js",
+    "/about": "./src/js/about.js",
+    "/science": "./src/js/science.js",
+    "/business": "./src/js/business.js",
+    "/contact": "./src/js/contact.js",
+  };
+
   router
     .on({
       "/": function () {
@@ -40,8 +48,27 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.text())
       .then((html) => {
         document.getElementById("content").innerHTML = html;
+        loadPageScript(page);
       })
       .catch((error) => console.error("Error fetching page:", error));
+  }
+
+  function loadPageScript(page) {
+    const routePath = `/${page.split(".")[0]}`;
+    const existingScript = document.querySelector(
+      `script[data-page="${routePath}"]`
+    );
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    const scriptFile = pageScripts[routePath];
+    if (scriptFile) {
+      const script = document.createElement("script");
+      script.src = scriptFile;
+      script.dataset.page = routePath;
+      document.head.appendChild(script);
+    }
   }
 
   // gnb
@@ -86,6 +113,5 @@ document.addEventListener("DOMContentLoaded", function () {
   slidedownBtn.addEventListener("click", () => {
     slidedownBtn.classList.toggle("on");
     slidedownCont.classList.toggle("on");
-  });  
+  });
 });
-

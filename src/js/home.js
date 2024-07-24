@@ -25,5 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.leaves-container');
   for (let i = 0; i < 10; i++) {
     new Leaf(container);
-  } 
+  }
 });
