@@ -86,5 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
   slidedownBtn.addEventListener("click", () => {
     slidedownBtn.classList.toggle("on");
     slidedownCont.classList.toggle("on");
-  });
+  });  
 });
+

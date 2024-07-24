@@ -1,65 +1,29 @@
-class Slider {
-  constructor() {
-    document.addEventListener("DOMContentLoaded", () => {
-      this.init();
-    });
+class Leaf {
+  constructor(container) {
+    this.container = container;
+    this.element = document.createElement('span');
+    this.element.classList.add('leaf');
+    this.positionLeaf();
+    this.container.appendChild(this.element);
   }
 
-  init() {
-    this.swiper = document.querySelector(".main2Swiper");
-    if (!this.swiper) {
-      console.error('Element with class ".main2Swiper" not found');
-      return;
-    }
-
-    this.swiperWrapper = this.swiper.querySelector(".swiper-wrapper");
-    if (!this.swiperWrapper) {
-      console.error('Element with class ".swiper-wrapper" not found');
-      return;
-    }
-
-    this.slides = this.swiper.querySelectorAll(".swiper-slide");
-    if (this.slides.length === 0) {
-      console.error('No elements with class ".swiper-slide" found');
-      return;
-    }
-
-    this.prevButton = document.querySelector(".swiper-btn.prev");
-    if (!this.prevButton) {
-      console.error('Element with class ".swiper-btn.prev" not found');
-      return;
-    }
-
-    this.nextButton = document.querySelector(".swiper-btn.next");
-    if (!this.nextButton) {
-      console.error('Element with class ".swiper-btn.next" not found');
-      return;
-    }
-
-    this.currentIndex = 0;
-    this.updateSlidePosition();
-
-    this.prevButton.addEventListener("click", () => {
-      if (this.currentIndex > 0) {
-        this.currentIndex--;
-        this.updateSlidePosition();
-      }
-    });
-
-    this.nextButton.addEventListener("click", () => {
-      if (this.currentIndex < this.slides.length - 1) {
-        this.currentIndex++;
-        this.updateSlidePosition();
-      }
-    });
+  getRandomPosition() {
+    const containerRect = this.container.getBoundingClientRect();
+    const x = Math.random() * (containerRect.width - 20);
+    const y = Math.random() * (containerRect.height - 20);
+    return { x, y };
   }
 
-  updateSlidePosition() {
-    const slideWidth = this.slides[0].offsetWidth;
-    this.swiperWrapper.style.transform = `translateX(-${
-      this.currentIndex * slideWidth
-    }px)`;
+  positionLeaf() {
+    const { x, y } = this.getRandomPosition();
+    this.element.style.left = `${x}px`;
+    this.element.style.top = `${y}px`;
   }
 }
 
-new Slider();
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.leaves-container');
+  for (let i = 0; i < 10; i++) {
+    new Leaf(container);
+  } 
+});

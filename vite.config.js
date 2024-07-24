@@ -46,8 +46,5 @@ export default defineConfig({
     target: "esnext",
     outDir: "dist",
     assetsDir: "./",
-  },
-  // optimizeDeps: {
-  //   include: ["swiper"],
-  // },
+  }, 
 });

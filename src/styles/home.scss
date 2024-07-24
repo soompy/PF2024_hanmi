@@ -172,23 +172,20 @@
     justify-content: space-between;
     height: 100vh;
     .title {
+        margin-right: $large-spacing;
         &._container {
             flex-shrink: 0;
         }
     }
     .photo-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         margin-left: auto;        
 
-        .img-thumbnail {
-            display: none;
-            flex-shrink: 0;
-            opacity: 0;            
+        .img-thumbnail {            
+            flex-shrink: 0;            
             transition: all 0.5s ease-in-out;
-
-            &.show {
-                display: block;
-                opacity: 1;
-            }
         }
     }
 
@@ -240,13 +237,16 @@
         height: 100%;
         .leaf {
             position: absolute;
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
+            z-index: 5;
             background: url("../assets/images/leaf.png") center center no-repeat;
             background-size: cover;
+            animation: shaking 1s ease-in infinite;
         }
     }
 }
+  
 
 @keyframes floating {
     0% {
@@ -267,5 +267,27 @@
 
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes shaking {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }
