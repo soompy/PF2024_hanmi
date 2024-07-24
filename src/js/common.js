@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const pageScripts = {
     "/": "./src/js/home.js",
-    "/about": "./src/js/about.js",
-    "/science": "./src/js/science.js",
+    "/about": "./src/js/about.js",    
     "/business": "./src/js/business.js",
     "/contact": "./src/js/contact.js",
   };
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   router
     .on({
       "/": function () {
-        renderPage("main.html");
+        renderPage("home.html");
       },
       "/about": function () {
         renderPage("about.html");
@@ -63,12 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const scriptFile = pageScripts[routePath];
-    if (scriptFile) {
-      const script = document.createElement("script");
-      script.src = scriptFile;
-      script.dataset.page = routePath;
-      document.head.appendChild(script);
-    }
+  if (scriptFile) {
+    const script = document.createElement("script");
+    script.src = scriptFile;
+    script.dataset.page = routePath;
+    script.onload = () => console.log(`Script ${scriptFile} loaded.`);
+    script.onerror = (e) => console.error(`Error loading script ${scriptFile}:`, e);
+    document.head.appendChild(script);
+  }
   }
 
   // gnb

@@ -17,4 +17,3 @@ gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 import "@styles/main.scss";
 
 import "@script/common";
-

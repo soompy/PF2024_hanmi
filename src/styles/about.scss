@@ -65,6 +65,7 @@
         &.cont-1 {
             .about {
                 &._2 {
+                    position: relative;
                     background: url("../assets/images/img_company_introduce.jpg");
                     background-repeat: no-repeat;
                     background-position: center center;
@@ -74,8 +75,7 @@
                         display: flex;
                         align-items: center;
                         flex-direction: column;
-
-                        // &.first {}
+                        
                         &.second {
                             .grid-box {
                                 display: grid;
@@ -90,15 +90,27 @@
                             }
                         }
                     }
+                    &:after {
+                        display: block;
+                        clear: both;
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0,0,0,0.1);
+                    }
                 }
 
                 &._3 {
                     .cont {
                         .cont-item {
-                            display: none;
+                            display: grid;
+                            grid-template-columns: 100px 540px auto;
                             align-items: center;
-                            justify-content: center;
-
+                            justify-content: flex-start;
+                            margin: $xlarge-spacing 0;
                             .circle {
                                 display: flex;
                                 align-items: center;
@@ -127,10 +139,6 @@
                                 strong {
                                     font-size: $font-size-l;
                                 }
-                            }
-
-                            &.on {
-                                display: flex;
                             }
                         }
                     }

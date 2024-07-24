@@ -1,7 +1,6 @@
 .science {
     &._2 {
-        position: relative;
-        height: 100vh;
+        position: relative;        
 
         .bg {
             display: block;
@@ -18,59 +17,40 @@
             position: absolute;
             left: 50%;
             top: 50%;
+            z-index: 1;
             width: inherit;
             transform: translate(-50%, -50%);
+            text-align: center;
 
             strong {
                 color: var(--c-primary);
-            }
-        }
-
-        &.bgOff {
-            .bg {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 40%;
-                height: 30vh;
-                background-position: right center;
-            }
-        }
+            }                    
+        }      
     }
 
     &._3 {
         position: relative;
 
-        .point {
-            position: relative;
-            width: 100%;
-            height: 100vh;
+        .point {      
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);      
+            grid-template-rows: repeat(2, 1fr); 
+            gap: $middle-spacing;     
+            width: 100%;            
             margin-top: $xlarge-spacing;
-            li {                
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: fit-content;
-                padding: $large-spacing;
+            li {                       
+                padding: $middle-spacing;
                 border-radius: $default-border-radius;
                 color: var(--c-white);
 
-                &:nth-child(even) {                
+                &:nth-child(n) {                
                     background: var(--c-primary);
                 }
 
-                &:nth-child(odd) {                    
+                &:nth-child(2n-1) {                    
                     background: var(--c-secondary);
                 }
-            }
-            &.on {
-                li {
-                    position: inherit;
-                    left: inherit;
-                    right: inherit;
-                }               
-            }
+            }          
         }
 
         .grid-box {
