@@ -6,7 +6,7 @@
         justify-content: space-between;
         width: 100%;
         height: 50vh;
-        font-size: 40px;
+        font-size: $font-size-xxl;
         font-weight: bold;
 
         .svg-circle {
@@ -142,7 +142,11 @@
 
 
 .make-container {
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: $middle-spacing;
+    margin-top: $xlarge-spacing;
 
     img {
         object-fit: contain;
@@ -171,20 +175,23 @@
     align-items: center;
     justify-content: space-between;
     height: 100vh;
+
     .title {
         margin-right: $large-spacing;
+
         &._container {
             flex-shrink: 0;
         }
     }
+
     .photo-box {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        margin-left: auto;        
+        margin-left: auto;
 
-        .img-thumbnail {            
-            flex-shrink: 0;            
+        .img-thumbnail {
+            flex-shrink: 0;
             transition: all 0.5s ease-in-out;
         }
     }
@@ -201,6 +208,7 @@
 .main_5 {
     position: relative;
     padding-bottom: 0;
+
     .title {
         text-align: right;
         flex-shrink: 0;
@@ -227,9 +235,9 @@
         .hand-img {
             width: 70%;
         }
-    }   
+    }
 }
-  
+
 
 @keyframes floating {
     0% {
@@ -272,5 +280,162 @@
 
     100% {
         transform: rotate(0);
+    }
+}
+
+@media screen and (max-width: $xl-screen) {
+    .main_1 {
+        .visual {
+            padding: 0 $xlarge-spacing;
+
+            .svg-circle {
+                width: 64%;
+            }
+        }
+    }
+
+    .rolling-banner-container {
+        height: 30vh;
+    }
+
+    .main_2 {
+        .swiper-btn-container {
+            .swiper-btn {
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        .main2Swiper {
+            .swiper-slide {
+                width: 510px;
+
+                .imgVideo,
+                .carousel-img {
+                    height: 286px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $lg-screen) {
+    .main_1 {
+        .visual {
+            flex-direction: column;
+
+            .svg-circle {
+                margin-top: $large-spacing;
+            }
+        }
+    }
+
+    .make-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: $middle-spacing;
+
+        img {
+            height: 240px;
+        }
+    }
+
+    .main_4 {
+        flex-direction: column;
+        height: auto;
+
+        .title {
+            margin-right: 0;
+            margin-bottom: $xlarge-spacing;
+            text-align: center;
+        }
+    }
+
+    .main_5 {
+        .esg-items {
+            .text-esg {
+                font-size: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $md-screen) {
+    .main_1 {
+        .visual {
+            padding: 0;
+        }
+    }
+
+    .make-container {
+        li {
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $sm-screen) {
+    .main_2 {
+        .main_2_top {
+            flex-direction: column;
+        }
+
+        .main2Swiper {
+            .swiper-slide {
+                width: 320px;
+                margin-right: $middle-spacing;
+
+                .imgVideo,
+                .carousel-img {
+                    height: 182px;
+                }
+            }
+        }
+    }
+
+    .make-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    .main_4 {
+        height: auto;
+
+        .title {
+            font-size: $font-size-xl;
+            margin-right: 0;
+            margin-bottom: $xlarge-spacing;
+        }
+
+        .photo-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .btn {
+            font-size: $font-size-m;
+            padding: $small-spacing $base-spacing;
+        }
+    }
+
+    .main_5 {
+        .title {
+            &._main {
+                font-size: $font-size-xl;
+            }
+
+            &._sub {
+                font-size: $font-size-xl;
+            }
+        }
+
+        .esg-items {
+            .text-esg {
+                font-size: 70px;
+            }
+        }
     }
 }

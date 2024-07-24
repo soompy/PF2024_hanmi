@@ -2,7 +2,7 @@ html,
 body {
     position: relative;
     width: 100%;
-    height: 100%;    
+    height: 100%;
 }
 
 ::selection {
@@ -113,7 +113,7 @@ body {
                 height: 0;
                 background: var(--c-white);
                 border-top: 1px solid var(--c-gray01);
-                box-shadow: 5px 5px 6px 0px rgba(155, 156, 151, 0.2);                
+                box-shadow: 5px 5px 6px 0px rgba(155, 156, 151, 0.2);
 
                 li {
                     flex: 1;
@@ -191,6 +191,7 @@ body {
 
             li {
                 margin-right: $middle-spacing;
+
                 a {
                     &:hover {
                         color: var(--c-primary);
@@ -288,6 +289,73 @@ body {
             padding-top: $middle-spacing;
             border-top: 1px solid var(--c-gray02);
             color: var(--c-gray02);
+        }
+    }
+}
+
+@media screen and (max-width: $xl-screen) {
+
+    #content,
+    .header-wrap,
+    .footer-wrap {
+
+        .inner {
+            width: 100%;
+            padding: 0 60px;
+        }
+    }
+
+    .area-common {
+        padding: 60px 0;
+    }
+}
+
+@media screen and (max-width: $lg-screen) {
+
+    #content,
+    .header-wrap,
+    .footer-wrap {
+
+        .inner {
+            padding: 0 40px;
+        }
+    }
+
+    .footer-wrap {
+        padding: $large-spacing;
+    }
+}
+
+@media screen and (max-width: $md-screen) {
+
+    #content,
+    .header-wrap,
+    .footer-wrap {
+
+        .inner {
+            padding: 0 30px;
+        }
+    }
+
+    .footer-wrap {
+        padding: $large-spacing;
+
+        .inner {
+            padding: 0;
+        }
+
+        .footerLink {
+            flex-direction: column;
+
+            .policyList {
+                align-items: flex-start;
+                margin-right: auto;
+            }
+
+            .selectFamily {
+                width: 100%;
+                margin-top: $large-spacing;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@
     --c-secondary: #231915;
     --c-green: #078418;
     --svg-width: 100%;
-    --svg-height: auto;    
+    --svg-height: auto;
 }
 
 html[data-theme=dark] {
@@ -67,7 +67,7 @@ $container-max-width: 1200px;
 
 
 
-@media screen and (max-width: $xl-screen) {    
+@media screen and (max-width: $xl-screen) {
     $font-size-m: 15px;
     $font-size-l: 17px;
     $font-size-xl: 22px;
@@ -81,7 +81,7 @@ $container-max-width: 1200px;
     $font-size-xxl: 30px;
 }
 
-@media screen and (max-width: $md-screen) {    
+@media screen and (max-width: $md-screen) {
     $font-size-l: 14px;
     $font-size-xl: 18px;
     $font-size-xxl: 28px;
@@ -89,7 +89,7 @@ $container-max-width: 1200px;
 
 @media screen and (max-width: $sm-screen) {
     $font-size-s: 12px;
-    $font-size-m: 13px;    
+    $font-size-m: 13px;
     $font-size-xl: 16px;
     $font-size-xxl: 24px;
 }
