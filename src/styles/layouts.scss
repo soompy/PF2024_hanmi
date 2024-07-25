@@ -294,15 +294,17 @@ body {
 }
 
 @media screen and (max-width: $xl-screen) {
-
     #content,
     .header-wrap,
     .footer-wrap {
-
         .inner {
             width: 100%;
             padding: 0 60px;
         }
+    }
+
+    .footer-wrap { 
+        padding: 60px 0;
     }
 
     .area-common {

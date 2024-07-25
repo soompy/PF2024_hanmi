@@ -1,6 +1,6 @@
 .science {
     &._2 {
-        position: relative;        
+        position: relative;
 
         .bg {
             display: block;
@@ -14,43 +14,46 @@
         }
 
         .title {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            z-index: 1;
-            width: inherit;
-            transform: translate(-50%, -50%);
-            text-align: center;
+            &._container {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                z-index: 1;
+                width: inherit;
+                transform: translate(-50%, -50%);
+                text-align: center;
 
-            strong {
-                color: var(--c-primary);
-            }                    
-        }      
+                strong {
+                    color: var(--c-primary);
+                }
+            }
+        }
     }
 
     &._3 {
         position: relative;
 
-        .point {      
+        .point {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);      
-            grid-template-rows: repeat(2, 1fr); 
-            gap: $middle-spacing;     
-            width: 100%;            
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: $middle-spacing;
+            width: 100%;
             margin-top: $xlarge-spacing;
-            li {                       
+
+            li {
                 padding: $middle-spacing;
                 border-radius: $default-border-radius;
                 color: var(--c-white);
 
-                &:nth-child(n) {                
+                &:nth-child(n) {
                     background: var(--c-primary);
                 }
 
-                &:nth-child(2n-1) {                    
+                &:nth-child(2n-1) {
                     background: var(--c-secondary);
                 }
-            }          
+            }
         }
 
         .grid-box {
@@ -64,6 +67,7 @@
                 h4 {
                     margin: $large-spacing 0;
                 }
+
                 i {
                     width: 20px;
                     height: 20px;
@@ -83,6 +87,91 @@
                         display: flex;
                         align-items: center;
                         margin: $middle-spacing 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $xl-screen) {
+    .science {
+        &._2 {
+            .title {
+                &._container {
+                    padding: 0 60px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $lg-screen) {}
+
+@media screen and (max-width: $md-screen) {
+    .science {
+        &._2 {
+            padding: 0;
+
+            .title {
+                &._container {
+                    padding: 0 30px;
+                }
+            }
+
+            .bg {
+                height: 40vh;
+                background-position: 0 0;
+                background-size: 110%;
+            }
+        }
+
+        &._3 {
+            .point {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                gap: $base-spacing;
+                margin-top: $large-spacing;
+            }
+
+            .grid-box {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                gap: $base-spacing;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm-screen) {
+    .science {
+        &._2 {
+            .bg {
+                height: 30vh;
+                background-size: 120%;
+            }
+
+            .title._main {
+                font-size: $font-size-l;
+            }
+        }
+
+        &._3 {
+            .point {
+                grid-template-columns: repeat(1, 1fr);
+                gap: $small-spacing;
+                margin-top: $large-spacing;
+            }
+
+            .grid-box {
+                grid-template-columns: repeat(1, 1fr);
+                gap: $base-spacing;
+
+                li {
+                    .info-list {
+                        li {
+                            margin: $base-spacing 0;
+                        }
                     }
                 }
             }
