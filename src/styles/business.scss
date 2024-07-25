@@ -272,3 +272,142 @@
         }
     }
 }
+
+@media screen and (max-width: $xl-screen) {}
+
+@media screen and (max-width: $lg-screen) {}
+
+@media screen and (max-width: $md-screen) {}
+
+@media screen and (max-width: $sm-screen) {
+    .business {
+        &._2 {
+            .search-wrap {
+                .search-box {
+                    border: 2px solid var(--c-primary);
+
+                    input {
+                        font-size: $font-size-l;
+                    }
+
+                    .btn-icon {
+                        .icon {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+
+                .filter-box {
+                    .filter-row {
+                        display: flex;
+                        flex-direction: column;
+                        gap: $base-spacing $base-spacing;
+                        margin-bottom: $large-spacing;
+
+                        .filter-title {
+                            .icon {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+
+                        .filter-item {
+                            margin-top: $base-spacing;
+                        }
+                    }
+                }
+
+                .btn-wrap {
+                    justify-content: center;
+
+                    .btn-resettxt {
+                        padding: $base-spacing;
+                        font-size: $font-size-m;
+
+                        .icon {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+
+                    .btn-medicine {
+                        padding: $base-spacing;
+                        font-size: $font-size-m;
+                    }
+                }
+            }
+        }
+
+        &._3 {
+            .result-text {
+                font-size: $font-size-l;
+            }
+
+            .flex-box {
+                gap: $base-spacing;
+
+                .product-item {
+                    width: calc(100% / 2 - 8px);
+
+                    a {
+                        padding: $middle-spacing;
+
+                        &:hover {
+                            .medicine-effect {
+                                font-size: $font-size-m;
+                            }
+                        }
+                    }
+
+                    .productInfo {
+                        margin-top: $middle-spacing;
+                        padding-top: $middle-spacing;
+
+                        .medicine-type {
+                            font-size: $font-size-m;
+                        }
+
+                        .medicine-name {
+                            font-size: $font-size-l;
+                            margin: $base-spacing 0 0;
+                        }
+                    }
+                }
+            }
+
+            .pagination-wrap {
+                flex-wrap: wrap;
+                font-size: $font-size-s;
+                margin-top: $large-spacing;
+
+                a {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .btn-firstPage,
+                .btn-prevPage,
+                .btn-nextPage,
+                .btn-lastPage {
+                    i {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+
+                .btn-prevPage {
+                    margin-right: $base-spacing;
+                }
+
+                .btn-nextPage {
+                    margin-left: $base-spacing;
+                }
+
+                .btn-pageNum {
+                    font-size: $font-size-l;
+                }
+            }
+        }
+    }
+}
