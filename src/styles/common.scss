@@ -12,7 +12,7 @@
 
     &._black {
         background: var(--c-black);
-        color: var(--c-white);   
+        color: var(--c-white);
     }
 
     &._white {
@@ -45,4 +45,29 @@
 
 .c-primary {
     color: var(--c-primary);
+}
+
+
+@media screen and (max-width: $xl-screen) {
+    .title {
+        &._main {
+            font-size: 30px;
+        }
+
+        &._sub {
+            font-size: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: $md-screen) {
+    .title {
+        &._main {
+            font-size: 26px;
+        }
+
+        &._sub {
+            font-size: 20px;
+        }
+    }
 }
