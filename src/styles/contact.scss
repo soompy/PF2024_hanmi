@@ -226,6 +226,7 @@
         }
 
         input[type=file] {
+            height: 63px;
             &::file-selector-button {
                 display: none;
             }
@@ -396,6 +397,7 @@
 
             input[type=file] {
                 flex: 3;
+                height: 52px;
             }
 
             input[type=checkbox] {
