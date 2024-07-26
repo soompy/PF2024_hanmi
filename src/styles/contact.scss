@@ -202,6 +202,7 @@
             font-size: $font-size-xl;
             background: var(--c-white);
             border: 2px solid var(--c-gray03);
+            color: var(--c-black);
             outline: none;
 
             &+input[type=text] {
@@ -237,6 +238,7 @@
             font-size: $font-size-xl;
             background: var(--c-white);
             border: 2px solid var(--c-gray03);
+            color: var(--c-black);
             outline: none;
             resize: none;
         }
@@ -332,6 +334,7 @@
                     }
 
                     .input-wrap {
+                        font-size: $font-size-s;
                         margin-top: $base-spacing;
 
                         .input-tit {
@@ -340,6 +343,7 @@
                         }
 
                         .radio-group {
+                            flex-direction: column;
                             gap: 10px 20px;
 
                             .radio-box {
@@ -381,13 +385,17 @@
             input[type=text],
             input[type=number],
             input[type=file] {
-                font-size: $font-size-l;
+                font-size: $font-size-s;
                 border: 1px solid var(--c-gray03);
                 margin-right: $base-spacing;
 
                 &:focus {
                     border: 1px solid var(--c-gray02);
                 }
+            }
+
+            input[type=file] {
+                flex: 3;
             }
 
             input[type=checkbox] {
@@ -405,35 +413,41 @@
                 align-items: center;
                 justify-content: center;
                 height: 52px;
+                font-size: $font-size-s;
                 padding: $base-spacing;
             }
+
+            .code-box {
+                flex: 3;
+                height: 52px;
+                border: 1px solid var(--c-gray03);
+                margin-right: $base-spacing;
+
+                .code-refresh {
+                    width: 52px;
+                    height: 52px;
+
+                    .icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+
+        .w-25 {
+            flex: 1;
         }
 
         ul {
             li {
-                font-size: $font-size-m;
+                font-size: $font-size-s;
             }
         }
 
         .icon {
             width: 16px;
             height: 16px;
-        }
-
-        .code-box {
-            height: 52px;
-            border: 1px solid var(--c-gray03);
-            margin-right: $base-spacing;
-
-            .code-refresh {
-                width: 52px;
-                height: 52px;
-
-                .icon {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
         }
     }
 }
