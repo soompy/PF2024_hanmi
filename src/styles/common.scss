@@ -47,14 +47,37 @@
     color: var(--c-primary);
 }
 
-.btnTop {
+.fixed-box {
     position: fixed;
     right: $large-spacing;
     bottom: $xlarge-spacing;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     z-index: 10;
-    width: 80px;
-    height: 80px;
-    background: var(--c-primary);
+
+    .btnTop {
+        width: 80px;
+        height: 80px;
+        background: var(--c-primary);
+    }
+
+    .theme-switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 50px;
+        padding: $base-spacing;
+        background: var(--c-gray03);
+        cursor: pointer;
+
+        .theme-text {
+            font-size: $font-size-s;
+            text-align: center;
+            color: var(--c-black);
+        }
+    }
 }
 
 @media screen and (max-width: $xl-screen) {
@@ -80,14 +103,20 @@
         }
     }
 
-
-    .btnTop {
-        width: 50px;
-        height: 50px;
-
-        .icon {
-            width: 24px;
-            height: 24px;
+    .fixed-box {
+        .btnTop {
+            width: 50px;
+            height: 50px;
+            .icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    
+        .theme-switch {
+            width: 50px;
+            height: inherit;
+            padding: $small-spacing;
         }
     }
 }

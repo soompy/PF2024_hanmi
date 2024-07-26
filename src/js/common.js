@@ -3,14 +3,27 @@ import Navigo from "navigo";
 document.addEventListener("DOMContentLoaded", function () {
   // theme
   const darkModeToggle = document.getElementById("darkModeToggle");
+  const themeText = document.querySelector(".theme-text");
 
   darkModeToggle.addEventListener("change", () => {
     if (darkModeToggle.checked) {
       document.documentElement.setAttribute("data-theme", "dark");
+      themeText.textContent = "Dark"; 
     } else {
       document.documentElement.setAttribute("data-theme", "light");
+      themeText.textContent = "Light"; 
     }
   });
+
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  
+  if (currentTheme === "dark") {
+    darkModeToggle.checked = true;
+    themeText.textContent = "Dark";
+  } else {
+    darkModeToggle.checked = false;
+    themeText.textContent = "Light";
+  }
 
   // navigo
   const router = new Navigo("/");
