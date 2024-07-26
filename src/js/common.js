@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const pageScripts = {
     "/": "./src/js/home.js",
-    "/about": "./src/js/about.js",    
+    "/about": "./src/js/about.js",
     "/business": "./src/js/business.js",
     "/contact": "./src/js/contact.js",
   };
@@ -62,14 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const scriptFile = pageScripts[routePath];
-  if (scriptFile) {
-    const script = document.createElement("script");
-    script.src = scriptFile;
-    script.dataset.page = routePath;
-    script.onload = () => console.log(`Script ${scriptFile} loaded.`);
-    script.onerror = (e) => console.error(`Error loading script ${scriptFile}:`, e);
-    document.head.appendChild(script);
-  }
+    if (scriptFile) {
+      const script = document.createElement("script");
+      script.src = scriptFile;
+      script.dataset.page = routePath;
+      script.onload = () => console.log(`Script ${scriptFile} loaded.`);
+      script.onerror = (e) =>
+        console.error(`Error loading script ${scriptFile}:`, e);
+      document.head.appendChild(script);
+    }
   }
 
   // gnb
@@ -116,3 +117,14 @@ document.addEventListener("DOMContentLoaded", function () {
     slidedownCont.classList.toggle("on");
   });
 });
+
+const btnTop = document.querySelector(".btnTop");
+
+if (btnTop) {
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}

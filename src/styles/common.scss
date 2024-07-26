@@ -47,6 +47,15 @@
     color: var(--c-primary);
 }
 
+.btnTop {
+    position: fixed;
+    right: $large-spacing;
+    bottom: $xlarge-spacing;
+    z-index: 10;
+    width: 80px;
+    height: 80px;
+    background: var(--c-primary);
+}
 
 @media screen and (max-width: $xl-screen) {
     .title {
@@ -69,5 +78,22 @@
         &._sub {
             font-size: 20px;
         }
+    }
+
+
+    .btnTop {
+        width: 50px;
+        height: 50px;
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: $sm-screen) {
+    .btnTop {
+        bottom: $large-spacing;
     }
 }
