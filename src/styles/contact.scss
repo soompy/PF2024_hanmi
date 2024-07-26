@@ -99,7 +99,7 @@
                         display: flex;
                         flex-wrap: wrap;
                         gap: 20px 40px;
-                        margin-top: 50px;
+                        margin-top: $large-spacing;
 
                         .radio-box {
                             position: relative;
@@ -162,11 +162,15 @@
                         }
                     }
                 }
+
+                .desc {
+                    font-size: $font-size-xl;
+                    margin: $large-spacing 0;
+                }
             }
 
             .agree-cont {
                 font-size: $font-size-l;
-                padding: $large-spacing 0;
                 background: var(--c-gray06);
                 padding: $large-spacing;
                 border-radius: $button-border-radius;
@@ -179,12 +183,18 @@
     }
 
     .input-text-box {
+        overflow: hidden;
         position: relative;
         display: flex;
         align-items: center;
         border-radius: $default-border-radius;
 
+        p {
+            margin-left: auto;
+        }
+
         input[type=text],
+        input[type=number],
         input[type=file] {
             width: calc(100% - $base-spacing);
             padding: $base-spacing;
@@ -243,8 +253,11 @@
         margin-right: $large-spacing;
 
         .code {
+            overflow: hidden;
+
             img {
                 object-fit: cover;
+                width: auto;
             }
         }
 
@@ -260,18 +273,167 @@
     }
 }
 
-@media (min-width: 800px) {
+@media screen and (max-width: $lg-screen) {
+    .contact {
+        .input-text-box {
+            .code-box {
+                .code {
+                    flex: 1;
+                }
+            }
 
-    .item {
-        font-size: 1rem;
+            input[type=number] {
+                flex: 2;
+                margin-right: 0 !important;
+            }
+        }
     }
 }
 
+@media screen and (max-width: $md-screen) {
+    .item {
+        font-size: 1rem;
+    }
 
-@media screen and (max-width: $xl-screen) {}
+    .contact {
+        .input-text-box {
+            .code-box {
+                flex: 1;
+            }
 
-@media screen and (max-width: $lg-screen) {}
+            input[type=number] {
+                flex: 1;
+            }
+        }
 
-@media screen and (max-width: $md-screen) {}
+    }
+}
 
-@media screen and (max-width: $sm-screen) {}
+@media screen and (max-width: $sm-screen) {
+    .contact {
+        &._1 {
+            .tabs-container {
+                .tab-item {
+                    .item {
+                        font-size: $font-size-m;
+                        padding: $base-spacing 0;
+                    }
+
+                    .tab-slider {
+                        height: 3px;
+                    }
+                }
+            }
+
+            .contact-main {
+                .contact-slide {
+                    .contact-desc {
+                        font-size: $font-size-s;
+                    }
+
+                    .input-wrap {
+                        margin-top: $base-spacing;
+
+                        .input-tit {
+                            font-size: $font-size-m;
+                            margin-top: $base-spacing;
+                        }
+
+                        .radio-group {
+                            gap: 10px 20px;
+
+                            .radio-box {
+                                label {
+                                    height: 20px;
+                                    padding-left: 30px;
+                                    font-size: $font-size-m;
+
+                                    &:before {
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+
+                                    &:after {
+                                        transform: translate(5px, -50%);
+                                        width: 10px;
+                                        height: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .desc {
+                        font-size: $font-size-l;
+                        margin: $middle-spacing 0;
+                    }
+                }
+
+                .agree-cont {
+                    font-size: $font-size-m;
+                    padding: $middle-spacing;
+                }
+            }
+        }
+
+        .input-text-box {
+
+            input[type=text],
+            input[type=number],
+            input[type=file] {
+                font-size: $font-size-l;
+                border: 1px solid var(--c-gray03);
+                margin-right: $base-spacing;
+
+                &:focus {
+                    border: 1px solid var(--c-gray02);
+                }
+            }
+
+            input[type=checkbox] {
+                width: 16px;
+                height: 16px;
+            }
+
+            textarea {
+                font-size: $font-size-l;
+                border: 1px solid var(--c-gray03);
+            }
+
+            .btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 52px;
+                padding: $base-spacing;
+            }
+        }
+
+        ul {
+            li {
+                font-size: $font-size-m;
+            }
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .code-box {
+            height: 52px;
+            border: 1px solid var(--c-gray03);
+            margin-right: $base-spacing;
+
+            .code-refresh {
+                width: 52px;
+                height: 52px;
+
+                .icon {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
