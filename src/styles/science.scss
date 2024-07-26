@@ -87,6 +87,10 @@
                         display: flex;
                         align-items: center;
                         margin: $middle-spacing 0;
+
+                        .bi {
+                            font-size: $font-size-l;
+                        }
                     }
                 }
             }

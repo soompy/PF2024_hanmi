@@ -21,9 +21,8 @@
                 }
 
                 .btn-icon {
-                    .icon {
-                        width: 30px;
-                        height: 30px;
+                    .bi {
+                        font-size: $font-size-xl;
                     }
                 }
             }
@@ -40,9 +39,8 @@
                         width: 200px;
                         flex-shrink: 0;
 
-                        .icon {
-                            width: 26px;
-                            height: 26px;
+                        .bi {
+                            font-size: $font-size-xl;
                         }
 
                         p {
@@ -103,9 +101,8 @@
                     border-radius: $button-border-radius;
                     margin-right: $base-spacing;
 
-                    .icon {
-                        width: 24px;
-                        height: 24px;
+                    .bi {
+                        font-size: $font-size-xl;
                         margin-right: $small-spacing;
                     }
                 }
@@ -221,6 +218,10 @@
             height: 50vh;
             flex-direction: column;
 
+            .bi {
+                font-size: 50px;
+            }
+
             p {
                 margin-top: $large-spacing;
             }
@@ -252,9 +253,8 @@
             .btn-lastPage {
                 font-size: 0;
 
-                i {
-                    width: 24px;
-                    height: 24px;
+                .bi {
+                    font-size: $font-size-xl;
                 }
             }
 
@@ -291,7 +291,7 @@
                     }
 
                     .btn-icon {
-                        .icon {
+                        .bi {
                             width: 20px;
                             height: 20px;
                         }
@@ -306,7 +306,7 @@
                         margin-bottom: $large-spacing;
 
                         .filter-title {
-                            .icon {
+                            .bi {
                                 width: 20px;
                                 height: 20px;
                             }
@@ -325,7 +325,7 @@
                         padding: $base-spacing;
                         font-size: $font-size-m;
 
-                        .icon {
+                        .bi {
                             width: 20px;
                             height: 20px;
                         }
@@ -384,17 +384,7 @@
                 a {
                     width: 20px;
                     height: 20px;
-                }
-
-                .btn-firstPage,
-                .btn-prevPage,
-                .btn-nextPage,
-                .btn-lastPage {
-                    i {
-                        width: 18px;
-                        height: 18px;
-                    }
-                }
+                }              
 
                 .btn-prevPage {
                     margin-right: $base-spacing;

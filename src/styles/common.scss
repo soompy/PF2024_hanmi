@@ -60,6 +60,7 @@
         width: 80px;
         height: 80px;
         background: var(--c-primary);
+        font-size: $font-size-xxl;
     }
 
     .theme-switch {
@@ -107,10 +108,7 @@
         .btnTop {
             width: 50px;
             height: 50px;
-            .icon {
-                width: 24px;
-                height: 24px;
-            }
+            font-size: $font-size-xl;
         }
     
         .theme-switch {

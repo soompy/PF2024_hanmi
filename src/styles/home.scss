@@ -87,6 +87,13 @@
 
         .swiper-btn-container {
             margin-left: auto;
+            .swiper-btn {
+                .bi {
+                    &::before {
+                        font-size: $font-size-xxl;
+                    }
+                }
+            }
         }
     }
 
@@ -298,16 +305,7 @@
         height: 30vh;
     }
 
-    .main_2 {
-        .swiper-btn-container {
-            .swiper-btn {
-                .icon {
-                    width: 30px;
-                    height: 30px;
-                }
-            }
-        }
-
+    .main_2 {        
         .main2Swiper {
             .swiper-slide {
                 width: 510px;
