@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   darkModeToggle.addEventListener("change", () => {
     if (darkModeToggle.checked) {
       document.documentElement.setAttribute("data-theme", "dark");
-      themeText.textContent = "Dark";
+      themeText.textContent = "Light";
     } else {
       document.documentElement.setAttribute("data-theme", "light");
-      themeText.textContent = "Light";
+      themeText.textContent = "Dark";
     }
   });
 
@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (currentTheme === "dark") {
     darkModeToggle.checked = true;
-    themeText.textContent = "Dark";
+    themeText.textContent = "Light";
   } else {
     darkModeToggle.checked = false;
-    themeText.textContent = "Light";
+    themeText.textContent = "Dark";
   }
 
   // navigo
@@ -139,10 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   moItems.forEach(function (moMenuItem) {
     moMenuItem.addEventListener("click", () => {
+      moMenuItem.classList.toggle("on");
+      
       moItems.forEach(function (item) {
-        item.classList.remove("on");
+        if (item !== moMenuItem) {
+          item.classList.remove("on");
+        }
       });
-      moMenuItem.classList.add("on");
     });
   });
 

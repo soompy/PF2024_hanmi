@@ -79,14 +79,21 @@
 }
 
 .main_2 {
+    overflow: hidden;
     position: relative;
 
-    .main_2_top {
+    .inner {
+        align-items: flex-start !important;
+    }
+
+    .title._container {
         display: flex;
         align-items: center;
+        width: 100%;
 
         .swiper-btn-container {
             margin-left: auto;
+
             .swiper-btn {
                 .bi {
                     &::before {
@@ -97,12 +104,13 @@
         }
     }
 
-    .main2Swiper {
+    .swiper {
         overflow: visible;
 
         .swiper-wrapper {
             display: flex;
             align-content: center;
+            transition: transform 0.3s ease-in-out;
         }
 
         .swiper-slide {
@@ -305,8 +313,8 @@
         height: 30vh;
     }
 
-    .main_2 {        
-        .main2Swiper {
+    .main_2 {
+        .swiper {
             .swiper-slide {
                 width: 510px;
 
@@ -376,11 +384,11 @@
 
 @media screen and (max-width: $sm-screen) {
     .main_2 {
-        .main_2_top {
+        .title._container {
             flex-direction: column;
         }
 
-        .main2Swiper {
+        .swiper {
             .swiper-slide {
                 width: 320px;
                 margin-right: $middle-spacing;

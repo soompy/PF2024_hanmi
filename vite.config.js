@@ -3,7 +3,6 @@ import path from "path";
 import { createHtmlPlugin } from "vite-plugin-html";
 import tsconfigPaths from "vite-tsconfig-paths";
 import fs from "fs";
-// import requireTransform from "vite-plugin-require-transform";
 
 const headerContent = fs.readFileSync(
   path.resolve(__dirname, "src/components/layouts/header.html"),
@@ -37,7 +36,6 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
-    // requireTransform(),
   ],
   build: {
     rollupOptions: {

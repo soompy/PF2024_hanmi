@@ -60,7 +60,33 @@
         width: 80px;
         height: 80px;
         background: var(--c-primary);
-        font-size: $font-size-xxl;
+        font-size: $font-size-xxl;        
+        &:hover {            
+            .bi {
+                &:before {
+                    animation: upAni 0.7s linear infinite;
+                    animation-fill-mode: both;
+                }
+            }
+        }
+    }
+
+    @keyframes upAni {
+        0% {
+            transform: translateY(0);            
+        }
+        25% {
+            transform: translateY(-30%);
+        }
+        50% {
+            transform: translateY(0);     
+        }
+        75% {
+            transform: translateY(30%);
+        }
+        100% {
+            transform: translateY(0);            
+        }
     }
 
     .theme-switch {
@@ -77,6 +103,9 @@
             font-size: $font-size-s;
             text-align: center;
             color: var(--c-white);
+        }
+        &:hover {
+            font-weight: bold;
         }
     }
 }
