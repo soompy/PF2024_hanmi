@@ -8,15 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
   darkModeToggle.addEventListener("change", () => {
     if (darkModeToggle.checked) {
       document.documentElement.setAttribute("data-theme", "dark");
-      themeText.textContent = "Dark"; 
+      themeText.textContent = "Dark";
     } else {
       document.documentElement.setAttribute("data-theme", "light");
-      themeText.textContent = "Light"; 
+      themeText.textContent = "Light";
     }
   });
 
   const currentTheme = document.documentElement.getAttribute("data-theme");
-  
+
   if (currentTheme === "dark") {
     darkModeToggle.checked = true;
     themeText.textContent = "Dark";
@@ -120,6 +120,30 @@ document.addEventListener("DOMContentLoaded", function () {
         subMenu.classList.remove("on");
       });
     }
+  });
+
+  // mobile gnb
+  var moMenu = document.querySelector(".mo-menu");
+  const moNav = document.querySelector(".mo-nav");
+  const btnClose = document.querySelector(".btn-close");
+  const moItems = document.querySelectorAll(".mo-item");
+  const fixedBox = document.querySelector(".fixed-box");
+
+  moMenu.addEventListener("click", () => {
+    moNav.classList.add("active");
+    fixedBox.style.display = "none";
+  });
+  btnClose.addEventListener("click", () => {
+    moNav.classList.remove("active");
+    fixedBox.style.display = "block";
+  });
+  moItems.forEach(function (moMenuItem) {
+    moMenuItem.addEventListener("click", () => {
+      moItems.forEach(function (item) {
+        item.classList.remove("on");
+      });
+      moMenuItem.classList.add("on");
+    });
   });
 
   // footer
