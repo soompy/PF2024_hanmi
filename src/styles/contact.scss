@@ -251,6 +251,8 @@
     }
 
     .code-box {
+        max-width: 300px;
+        flex: auto;
         height: 65px;
         border: 2px solid var(--c-gray03);
         margin-right: $large-spacing;
@@ -259,8 +261,9 @@
             overflow: hidden;
 
             img {
-                object-fit: cover;
-                width: auto;
+                object-fit: cover;        
+                width: fit-content;        
+                height: 100%;
             }
         }
 
@@ -269,8 +272,7 @@
             height: 65px;
 
             .bi {
-                width: 30px;
-                height: 30px;
+                font-size: $font-size-xl;
             }
         }
     }
@@ -299,11 +301,7 @@
     }
 
     .contact {
-        .input-text-box {
-            .code-box {
-                flex: 1;
-            }
-
+        .input-text-box {        
             input[type=number] {
                 flex: 1;
             }
@@ -419,8 +417,8 @@
                 padding: $base-spacing;
             }
 
-            .code-box {
-                flex: 3;
+            .code-box {           
+                flex: 2;     
                 height: 52px;
                 border: 1px solid var(--c-gray03);
                 margin-right: $base-spacing;

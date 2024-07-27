@@ -1,17 +1,15 @@
 .science {
     &._2 {
         position: relative;
+        display: block;
+        width: 100%;
+        height: 70vh;
+        background: url("../assets/images/img_hanmirnd_overview.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 110%;
+        transition: all 0.5s ease-in-out;
 
-        .bg {
-            display: block;
-            width: 100%;
-            height: 70vh;
-            background: url("../assets/images/img_hanmirnd_overview.jpg");
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            transition: all 0.5s ease-in-out;
-        }
 
         .title {
             &._container {
@@ -27,6 +25,19 @@
                     color: var(--c-primary);
                 }
             }
+        }
+
+        &::before {
+            display: block;
+            clear: both;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(2px);            
         }
     }
 
@@ -93,6 +104,16 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+html[data-theme=dark] {
+    .science {
+        &._2 {
+            &::before {
+                background: rgba($color: #000000, $alpha: 0.5);
             }
         }
     }

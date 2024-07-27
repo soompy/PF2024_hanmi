@@ -70,13 +70,13 @@
         width: 80px;
         height: 50px;
         padding: $base-spacing;
-        background: var(--c-gray03);
+        background: var(--c-secondary);        
         cursor: pointer;
 
         .theme-text {
             font-size: $font-size-s;
             text-align: center;
-            color: var(--c-black);
+            color: var(--c-white);
         }
     }
 }

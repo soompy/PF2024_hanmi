@@ -41,8 +41,7 @@
             width: 100%;
             height: 100%;
             background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(2px);
-            border-radius: 10px;
+            backdrop-filter: blur(2px);            
         }
     }
 
@@ -117,6 +116,16 @@
                     width: 8px;
                     height: 8px;
                 }
+            }
+        }
+    }
+}
+
+html[data-theme=dark] {
+    .about {
+        &._2 {
+            &::before {
+                background: rgba($color: #000000, $alpha: 0.5);
             }
         }
     }
