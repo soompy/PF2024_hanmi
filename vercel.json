@@ -1,8 +1,32 @@
 {
   "rewrites": [
     {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/business",
+      "destination": "/business.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/science",
+      "destination": "/science.html"
+    },
+    {
+      "source": "/home",
+      "destination": "/home.html"
+    },
+    {
+      "source": "/",
+      "destination": "/home.html"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/home.html"
     }
   ]
 }
