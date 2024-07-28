@@ -2,31 +2,31 @@
   "rewrites": [
     {
       "source": "/about",
-      "destination": "/about.html"
+      "destination": "/public/about.html"
     },
     {
       "source": "/business",
-      "destination": "/business.html"
+      "destination": "/public/business.html"
     },
     {
       "source": "/contact",
-      "destination": "/contact.html"
+      "destination": "/public/contact.html"
     },
     {
       "source": "/science",
-      "destination": "/science.html"
+      "destination": "/public/science.html"
     },
     {
       "source": "/home",
-      "destination": "/home.html"
+      "destination": "/public/home.html"
     },
     {
       "source": "/",
-      "destination": "/home.html"
+      "destination": "/public/index.html"
     },
     {
       "source": "/(.*)",
-      "destination": "/home.html"
+      "destination": "/public/index.html"
     }
   ]
 }

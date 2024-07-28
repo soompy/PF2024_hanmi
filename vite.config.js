@@ -15,7 +15,7 @@ const footerContent = fs.readFileSync(
 );
 
 export default defineConfig({
-  base: "./",
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -43,6 +43,6 @@ export default defineConfig({
     },
     target: "esnext",
     outDir: "dist",
-    assetsDir: "./",
+    assetsDir: 'assets',
   }, 
 });
